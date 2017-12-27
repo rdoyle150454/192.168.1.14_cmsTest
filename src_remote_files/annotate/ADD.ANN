@@ -1,0 +1,70 @@
+ Annotated listing for element ADD.PAS in CMS Library DISK$USERS:[RDOYLE.cms_test]  18-DEC-2017 07:00:51 
+ 
+ 
+ Element ADD.PAS  "new_pascal_project"
+ 
+       /Concurrent
+       /NoReference_Copy
+       /NoHistory
+       /NoNotes
+ 
+ *2    31-OCT-2016 09:28:56 RDOYLE "changes"
+           File creation:      31-OCT-2016 09:28
+           File revision:      31-OCT-2016 09:28 (1)
+           Record format:      Stream_LF
+           Record attributes:  Carriage return carriage control
+            
+ *1    31-OCT-2016 08:52:41 RDOYLE "new_pascal_project"
+           File creation:      31-OCT-2016 08:49
+           File revision:      31-OCT-2016 08:49 (1)
+           Record format:      Stream_LF
+           Record attributes:  Carriage return carriage control
+            
+
+ Annotated listing for element ADD.PAS in CMS Library DISK$USERS:[RDOYLE.cms_test]  18-DEC-2017 07:00:51 
+ 
+ 
+        1       Program ADD(input, output);
+        2       
+        3       (*** Simple program to add 2 integer arrays element by element.  ***)
+2       4       (**** allo from the demo)
+        5       const
+        6         size = 5;
+        7       
+        8       type
+        9         intarray = array [1..size] of integer;
+        10      
+        11      var
+        12         i: integer;
+        13         a: intarray;
+        14      
+        15      (* ***************************    adder    ********************************** *)
+        16      
+        17      procedure adder(var a,b : intarray);
+        18      var
+        19         i: integer;
+        20      
+        21      begin
+        22        for i := 1 to size do
+        23           b[i] := a[i] + b[i];
+        24      end;
+        25      
+        26      (* **************************    main      ********************************** *)
+        27      
+        28      begin
+        29        for i := 1 to size do 
+        30           a[i] := i;
+        31      
+        32        writeln('The array before call to adder:');
+        33        for i := 1 to size do 
+        34           write (a[i]);
+        35        writeln;
+        36      
+        37        adder(a,a);
+        38      
+        39        writeln('The array after call to adder:');
+        40        for i := 1 to size do 
+        41           write (a[i]);
+        42        writeln;
+        43      end.
+
