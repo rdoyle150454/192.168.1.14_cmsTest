@@ -1,7 +1,7 @@
 $ write sys$output "Process          PID         Elapsed time CPU Time    Image name"
 $!
 $! Establish our context
-$!
+$! test file
 $
 $       ctx = ""
 $       if f$getsyi("cluster_member")
